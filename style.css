@@ -1388,9 +1388,11 @@ body.modal-open {
     margin:18px 0;
   }
 
-  /* 🔥 hide side arrows in mobile */
-  .modal-arrow{
-    display:none;
+  
+   .modal-arrow {
+    width: 34px;
+    height: 34px;
+    font-size: 20px;
   }
 
   /*  SLIDER CONTROLS FIX  */
