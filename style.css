@@ -627,6 +627,63 @@ body.modal-open {
   color: #333;
 }
 
+.video-preview{
+  position: relative;
+  display: block;
+  text-decoration: none; 
+}
+
+
+.video-preview,
+.video-preview:hover,
+.video-preview:focus,
+.video-preview:active{
+  text-decoration: none;
+}
+
+.video-preview img{
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+}
+
+
+.video-preview::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+  border-radius: 12px;
+}
+
+
+.play-btn{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  
+  background: rgba(0,0,0,0.75);
+  color: white;
+  font-size: 30px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  z-index: 2;
+  pointer-events: none; 
+}
+
+
+.video-preview:hover .play-btn{
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
 @media (max-width: 768px) {
   .experience-grid {
     grid-template-columns: 1fr;
@@ -1363,13 +1420,25 @@ body.modal-open {
     gap:18px;
   }
 
-  .project-card{
-    padding:18px;
-  }
+.project-card{
+  padding:18px;
+  cursor:pointer;
+  border: 1px solid #e0e0e0; 
+  transition: all 0.25s ease;
+}
 
-  .project-card h3{
-    font-size:1.5rem;
-  }
+.project-card:hover{
+  transform: translateY(-6px) scale(1.01);
+  background: #fbfbfb;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+
+  border-width: 2px;         
+  border-color: #5c5959;
+}
+
+.project-card h3{
+  font-size:1.5rem;
+}
 
   /* modal */
   .modal-card{
