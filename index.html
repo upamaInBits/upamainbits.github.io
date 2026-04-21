@@ -1630,65 +1630,76 @@ Mentored 3 undergraduate students in child–computer interaction, supporting re
     /* 
        ACHIEVEMENTS SLIDER
      */
-    const slides = document.querySelectorAll(".slide");
-    const dots = document.querySelectorAll(".dot");
-    const prevBtn = document.querySelector(".prev");
-    const nextBtn = document.querySelector(".next");
-    const pauseBtn = document.querySelector(".pause-btn");
+const slides = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".dot");
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
+const pauseBtns = document.querySelectorAll(".pause-btn");
 
-    let current = 0;
-    let autoSlide = null;
-    let isPaused = false;
+let current = 0;
+let autoSlide = null;
+let isPaused = false;
 
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle("active", i === index);
-        dots[i].classList.toggle("active", i === index);
-      });
-      current = index;
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.toggle("active", i === index);
+    if (dots[i]) {
+      dots[i].classList.toggle("active", i === index);
     }
+  });
+  current = index;
+}
 
-    function nextSlide() {
-      showSlide((current + 1) % slides.length);
-    }
+function nextSlide() {
+  showSlide((current + 1) % slides.length);
+}
 
-    function prevSlide() {
-      showSlide((current - 1 + slides.length) % slides.length);
-    }
+function prevSlide() {
+  showSlide((current - 1 + slides.length) % slides.length);
+}
 
-    if (prevBtn) prevBtn.onclick = prevSlide;
-    if (nextBtn) nextBtn.onclick = nextSlide;
+if (prevBtn) prevBtn.onclick = prevSlide;
+if (nextBtn) nextBtn.onclick = nextSlide;
 
-    dots.forEach((dot, i) => {
-      dot.onclick = () => showSlide(i);
-    });
+dots.forEach((dot, i) => {
+  dot.onclick = () => showSlide(i);
+});
 
-    function startAuto() {
+function startAuto() {
+  stopAuto();
+  autoSlide = setInterval(nextSlide, 3500);
+}
+
+function stopAuto() {
+  if (autoSlide) {
+    clearInterval(autoSlide);
+    autoSlide = null;
+  }
+}
+
+function updatePauseButtons() {
+  pauseBtns.forEach((btn) => {
+    btn.textContent = isPaused ? "Play" : "Pause";
+  });
+}
+
+pauseBtns.forEach((btn) => {
+  btn.onclick = () => {
+    if (isPaused) {
+      startAuto();
+    } else {
       stopAuto();
-      autoSlide = setInterval(nextSlide, 3500);
     }
 
-    function stopAuto() {
-      if (autoSlide) {
-        clearInterval(autoSlide);
-        autoSlide = null;
-      }
-    }
+    isPaused = !isPaused;
+    updatePauseButtons();
+  };
+});
 
-    if (pauseBtn) {
-      pauseBtn.onclick = () => {
-        if (isPaused) {
-          startAuto();
-          pauseBtn.textContent = "Pause";
-        } else {
-          stopAuto();
-          pauseBtn.textContent = "Play";
-        }
-        isPaused = !isPaused;
-      };
-    }
+showSlide(current);
+startAuto();
+updatePauseButtons();
 
-    startAuto();
 
     /* 
        GENERIC MODAL FUNCTIONS
