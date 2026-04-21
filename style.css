@@ -1265,160 +1265,175 @@ body.modal-open {
     grid-template-columns:1fr;
   }
 }
-@media (max-width: 1100px) {
-  .page-shell {
-    max-width: 100%;
-    margin: 0;
-    border-radius: 0;
+@media (max-width: 700px) {
+  body {
+    padding: 10px;
   }
 
-  .inner-shell {
-    padding-top: 20px;
+  .top-strip {
+    padding: 12px 0 14px 0;
+  }
+
+  .navbar {
+    width: 100%;
+    max-width: 100%;
+    padding: 12px 14px;
+    border-radius: 22px;
+  }
+
+  .nav-links {
+    gap: 10px 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-links a {
+    font-size: 15px;
+  }
+
+  .hero,
+  .content-section {
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
   .hero {
-    grid-template-columns: 1fr 300px;
-    column-gap: 40px;
-    padding: 32px;
+    grid-template-columns: 1fr;
+    row-gap: 18px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-text h1 {
+    font-size: 2.6rem;
+    line-height: 1;
+  }
+
+  .hero-description,
+  .hero-seeking {
+    font-size: 0.98rem;
+    line-height: 1.65;
+    max-width: 100%;
   }
 
   .hero-image img {
     width: 100%;
-    max-width: 300px;
+    max-width: 230px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .section-card,
+  .research-card,
+  .contact-card {
+    padding: 22px 18px;
+  }
+
+  .section-card h2 {
+    font-size: 2.2rem;
+    margin-bottom: 18px;
+  }
+
+  .project-grid,
+  .education-grid,
+  .qa-grid,
+  .experience-grid,
+  .coursework-grid,
+  .catchafire-grid,
+  .catchafire-summary-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .project-card {
+    padding: 18px;
+  }
+
+  .project-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .modal-card {
+    width: 94vw;
+    max-height: 88vh;
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .modal-card h2 {
+    font-size: 1.9rem;
+    padding-right: 28px;
+  }
+
+  .modal-slider {
+    gap: 6px;
+  }
+
+  .modal-arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+  }
+
+  .network-image-frame,
+  .cooling-image-frame,
+  .queue-image-frame,
+  .juac-image-stage,
+  #xrImageContainer {
+    height: auto;
+    min-height: 220px;
+    max-height: none;
+  }
+
+  .slide img,
+  .project-image,
+  .beaver-img,
+  .beaver-img-large,
+  .xr-single-img {
+    max-width: 100%;
     height: auto;
   }
 
-  .section-card {
-    border-radius: 18px;
+  .contact-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .contact-label,
+  .contact-item a {
+    font-size: 16px;
+  }
+
+  .contact-item a {
+    font-size:16px;
+    word-break: break-word;
+    overflow-wrap: anywhere;
   }
 }
-@media(max-width:700px){
-  body{
-    padding:12px;
+
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 2.25rem;
   }
 
-    .navbar{
-    padding:14px 18px;
+  .nav-links a {
+    font-size: 14px;
   }
 
-  .nav-links{
-    gap:10px 18px;
-    flex-wrap:wrap;
-    justify-content:center;
-  }
-
-  .nav-links a{
-    font-size:16px;
-  }
-
-  .hero,
-  .content-section{
-    padding-left:24px;
-    padding-right:24px;
-  }
-
-  .hero{
-    grid-template-columns:1fr;
-    row-gap:20px;
-    padding-top:36px;
-    padding-bottom:32px;
-  }
-
-  .hero-text h1{
-    font-size:3rem;
-    line-height:1;
+  .section-card h2 {
+    font-size: 2rem;
   }
 
   .hero-description,
-  .hero-seeking{
-    font-size:1.05rem;
-    line-height:1.7;
-  }
-
-  .hero-image img{
-    width:100%;
-    max-width:260px;
-    height:auto;
-    margin:0 auto;
-    display:block;
-  }
-
-  .section-card{
-    padding:28px 24px;
-  }
-
-  .beaver-info{
-    flex-direction:column;
-    gap:24px;
-  }
-
-  .beaver-img{
-    max-height:260px;
-  }
-
-  .beaver-img-large{
-    max-width:260px;
-    max-height:380px;
-  }
-
-   .modal-card{
-    width:90vw;
-    max-height:85vh;
-    padding:20px;
-  }
-
-
-  .modal-card h2{
-    font-size:2.1rem;
-  }
-
-  .modal-slider{
-    gap:8px;
-  }
-
-    .modal-arrow{
-    width:34px;
-    height:34px;
-    font-size:20px;
-  }
-
-  #xrImageContainer{
-    height:280px; 
-  }
-
-  .juac-image-stage{
-    height:380px;
-  }
-
-  @media (max-width:700px){
-  .contact-item{
-    flex-direction:column;
-    align-items:flex-start;
-    gap:4px;
-  }
-
-  .contact-label{
-    font-size:16px;
-  }
-
-  .contact-item a{
-    font-size:16px;
-    word-break:break-word;
-  }
-}
-}
-@media (max-width:480px){
-  .hero-text h1{
-    font-size:2.7rem;
-  }
-
-  .hero-description,
-  .hero-seeking{
-    font-size:1rem;
-    line-height:1.65;
-  }
-
-  .section-card{
-    padding:24px 20px;
+  .hero-seeking,
+  .project-card p,
+  .research-card p,
+  .contact-card p {
+    font-size: 0.95rem;
   }
 }
