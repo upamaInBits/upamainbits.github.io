@@ -296,12 +296,11 @@ Designed and developed a Unity-based VR prototype for Meta Quest that redesigns 
           </a>
         </div>
 
-         <div class="slide">
+        <div class="slide">
           <img src="images/achievement9.jpg" alt="Achievement 9" />
           <p class="slide-text">
             Awarded Department Recognition at BSU Graduate Student Showcase.
           </p>
-
         </div>
 
         <div class="slide">
@@ -312,71 +311,76 @@ Designed and developed a Unity-based VR prototype for Meta Quest that redesigns 
         </div>
 
         <div class="slide">
-  <img src="images/achievement5.jpg" alt="Achievement 5" />
-  <p class="slide-text">
-  Selected as a Graduate Speaker at the CS Commencement Ceremony, BSU.
-  </p>
-</div>
+          <img src="images/achievement5.jpg" alt="Achievement 5" />
+          <p class="slide-text">
+            Selected as a Graduate Speaker at the CS Commencement Ceremony, BSU.
+          </p>
+        </div>
 
         <div class="slide">
-  <img src="images/achievement6.jpg" alt="Achievement 6" />
-  <p class="slide-text">
-  Hosted Nepali Night at BSU, engaging a diverse audience.
-  </p>
-</div>
+          <img src="images/achievement6.jpg" alt="Achievement 6" />
+          <p class="slide-text">
+            Hosted Nepali Night at BSU, engaging a diverse audience.
+          </p>
+        </div>
 
- <div class="slide">
-  <img src="images/achievement7.jpg" alt="Achievement 7" />
-  <p class="slide-text">
-  Recognized as ASC Student of the Month at MSU for ASC contribution.
-</p>
-<a href="https://www.minotstateu.edu/asc/student-of-the-month.shtml"
-   target="_blank"
-   class="achievement-link"
-   onclick="event.stopPropagation();">
-  View official listing →
-</a>
-</div>
+        <div class="slide">
+          <img src="images/achievement7.jpg" alt="Achievement 7" />
+          <p class="slide-text">
+            Recognized as ASC Student of the Month at MSU for ASC contribution.
+          </p>
+          <a href="https://www.minotstateu.edu/asc/student-of-the-month.shtml"
+             target="_blank"
+             class="achievement-link"
+             onclick="event.stopPropagation();">
+            View official listing →
+          </a>
+        </div>
 
- <div class="slide">
-  <img src="images/achievement10.jpg" alt="Achievement 10" />
-  <p class="slide-text">
-  Recognized as ASC Student of the Month at MSU for ASC contribution.
-</p>
-</div>
+        <div class="slide">
+          <img src="images/achievement10.jpg" alt="Achievement 10" />
+          <p class="slide-text">
+            Recognized as ASC Student of the Month at MSU for ASC contribution.
+          </p>
+        </div>
 
-<div class="slide">
-  <img src="images/achievement8.jpg" alt="MSU Feature Story" />
-  <p class="slide-text">
-  Featured by MSU for leadership and impact in campus engagement through MSU Life.
-</p>
-
-  <a href="https://www.minotstateu.edu/pio/news/2021/11/MSU-Life-brought-Thapa-Magar-to-campus.shtml"
-     target="_blank"
-     class="achievement-link"
-     onclick="event.stopPropagation();">
-    Read full story →
-  </a>
-</div>
+        <div class="slide">
+          <img src="images/achievement8.jpg" alt="MSU Feature Story" />
+          <p class="slide-text">
+            Featured by MSU for leadership and impact in campus engagement through MSU Life.
+          </p>
+          <a href="https://www.minotstateu.edu/pio/news/2021/11/MSU-Life-brought-Thapa-Magar-to-campus.shtml"
+             target="_blank"
+             class="achievement-link"
+             onclick="event.stopPropagation();">
+            Read full story →
+          </a>
+        </div>
       </div>
 
-      <button class="slider-btn prev" type="button">‹</button>
-      <button class="slider-btn next" type="button">›</button>
-      <button class="pause-btn" type="button">Pause</button>
+      <!-- desktop arrows -->
+      <button class="slider-btn prev" type="button" onclick="prevSlide()">‹</button>
+      <button class="slider-btn next" type="button" onclick="nextSlide()">›</button>
 
-     <div class="slider-dots">
-  <span class="dot active"></span>
-  <span class="dot"></span>
-  <span class="dot"></span>
-  <span class="dot"></span>
-  <span class="dot"></span>
-  <span class="dot"></span>
-  <span class="dot"></span>
-   <span class="dot"></span>
-   <span class="dot"></span>
-   <span class="dot"></span>
+      <!-- mobile controls -->
+      <div class="mobile-controls">
+        <button class="mobile-arrow" type="button" onclick="prevSlide()">‹</button>
+        <button class="pause-btn" type="button" onclick="toggleSliderPause(this)">Pause</button>
+        <button class="mobile-arrow" type="button" onclick="nextSlide()">›</button>
+      </div>
 
-</div>
+      <div class="slider-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
     </div>
   </div>
 </section>
