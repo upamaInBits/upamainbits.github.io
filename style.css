@@ -1225,58 +1225,22 @@ body.modal-open {
   text-align:center;
 }
 
+/*  MOBILE VISIBILITY  */
 .mobile-only{
   display:none;
 }
 
-@media (max-width:700px){
-  .mobile-only{
-    display:list-item;
-  }
-}
 .mobile-controls{
   display:none;
 }
 
-@media (max-width:700px){
-  .slider-btn{
-    display:none;
-  }
-
-  .mobile-controls{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:16px;
-    margin-top:14px;
-  }
-
-  .mobile-arrow{
-    width:46px;
-    height:46px;
-    border:none;
-    border-radius:50%;
-    background:rgba(0,0,0,0.45);
-    color:#fff;
-    font-size:28px;
-    line-height:1;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    cursor:pointer;
-  }
-
-  .mobile-arrow:hover{
-    background:rgba(0,0,0,0.6);
-  }
-
-  .pause-btn{
-    margin-top:0;
-  }
+.desktop-pause{
+  display:inline-block;
 }
 
-/* RESPONSIVE */
-@media(max-width:1000px){
+
+/*  TABLET / SMALL DESKTOP  */
+@media (max-width:1000px){
   .hero{
     grid-template-columns:1fr;
     justify-content:start;
@@ -1305,174 +1269,236 @@ body.modal-open {
     grid-template-columns:1fr;
   }
 }
-@media (max-width: 700px) {
-  body {
-    padding: 10px;
+
+
+/*  MOBILE MAIN */
+@media (max-width:700px){
+
+  /* general spacing */
+  body{
+    padding:10px;
   }
 
-  .top-strip {
-    padding: 12px 0 14px 0;
+  .top-strip{
+    padding:12px 0 14px 0;
   }
 
-  .navbar {
-    width: 100%;
-    max-width: 100%;
-    padding: 12px 14px;
-    border-radius: 22px;
+  /* navbar */
+  .navbar{
+    width:100%;
+    max-width:100%;
+    padding:12px 14px;
+    border-radius:22px;
   }
 
-  .nav-links {
-    gap: 10px 14px;
-    flex-wrap: wrap;
-    justify-content: center;
+  .nav-links{
+    gap:10px 14px;
+    flex-wrap:wrap;
+    justify-content:center;
   }
 
-  .nav-links a {
-    font-size: 15px;
+  .nav-links a{
+    font-size:15px;
   }
 
+  /* hero */
   .hero,
-  .content-section {
-    padding-left: 16px;
-    padding-right: 16px;
+  .content-section{
+    padding-left:16px;
+    padding-right:16px;
   }
 
-  .hero {
-    grid-template-columns: 1fr;
-    row-gap: 18px;
-    padding-top: 24px;
-    padding-bottom: 24px;
+  .hero{
+    grid-template-columns:1fr;
+    row-gap:18px;
+    padding-top:24px;
+    padding-bottom:24px;
   }
 
-  .hero-text {
-    max-width: 100%;
+  .hero-text{
+    max-width:100%;
   }
 
-  .hero-text h1 {
-    font-size: 2.6rem;
-    line-height: 1;
+  .hero-text h1{
+    font-size:2.6rem;
+    line-height:1;
   }
 
   .hero-description,
-  .hero-seeking {
-    font-size: 0.98rem;
-    line-height: 1.65;
-    max-width: 100%;
+  .hero-seeking{
+    font-size:0.98rem;
+    line-height:1.65;
+    max-width:100%;
   }
 
-  .hero-image img {
-    width: 100%;
-    max-width: 230px;
-    margin: 0 auto;
-    display: block;
+  .hero-image img{
+    width:100%;
+    max-width:230px;
+    margin:0 auto;
+    display:block;
   }
 
+  /* cards */
   .section-card,
   .research-card,
-  .contact-card {
-    padding: 22px 18px;
+  .contact-card{
+    padding:22px 18px;
   }
 
-  .section-card h2 {
-    font-size: 2.2rem;
-    margin-bottom: 18px;
+  .section-card h2{
+    font-size:2.2rem;
+    margin-bottom:18px;
   }
 
+  /* grids */
   .project-grid,
   .education-grid,
   .qa-grid,
   .experience-grid,
   .coursework-grid,
   .catchafire-grid,
-  .catchafire-summary-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
+  .catchafire-summary-grid{
+    grid-template-columns:1fr;
+    gap:18px;
   }
 
-  .project-card {
-    padding: 18px;
+  .project-card{
+    padding:18px;
   }
 
-  .project-card h3 {
-    font-size: 1.5rem;
+  .project-card h3{
+    font-size:1.5rem;
   }
 
-  .modal-card {
-    width: 94vw;
-    max-height: 88vh;
-    padding: 18px;
-    border-radius: 18px;
+  /* modal */
+  .modal-card{
+    width:94vw;
+    max-height:88vh;
+    padding:18px;
+    border-radius:18px;
   }
 
-  .modal-card h2 {
-    font-size: 1.9rem;
-    padding-right: 28px;
+  .modal-card h2{
+    font-size:1.9rem;
+    padding-right:28px;
   }
 
-  .modal-slider {
-     gap:8px;
+  .modal-slider{
+    gap:8px;
     margin:18px 0;
   }
 
-  .modal-arrow {
-       display:none;
+  /* 🔥 hide side arrows in mobile */
+  .modal-arrow{
+    display:none;
   }
 
+  /*  SLIDER CONTROLS FIX  */
+
+  /* hide desktop controls */
+  .slider-btn{
+    display:none;
+  }
+
+  .desktop-pause{
+    display:none;
+  }
+
+  /* show mobile controls */
+  .mobile-controls{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:16px;
+    margin-top:14px;
+  }
+
+  .mobile-arrow{
+    width:44px;
+    height:44px;
+    border:none;
+    border-radius:50%;
+    background:rgba(0,0,0,0.45);
+    color:#fff;
+    font-size:24px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+  }
+
+  .mobile-arrow:hover{
+    background:rgba(0,0,0,0.6);
+  }
+
+  .pause-btn{
+    margin:0;
+  }
+
+  /* images */
   .network-image-frame,
   .cooling-image-frame,
   .queue-image-frame,
   .juac-image-stage,
-  #xrImageContainer {
-    height: auto;
-    min-height: 220px;
-    max-height: none;
+  #xrImageContainer{
+    height:auto;
+    min-height:220px;
+    max-height:none;
   }
 
   .slide img,
   .project-image,
   .beaver-img,
   .beaver-img-large,
-  .xr-single-img {
-    max-width: 100%;
-    height: auto;
+  .xr-single-img{
+    max-width:100%;
+    height:auto;
   }
 
-  .contact-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
+  /* contact */
+  .contact-item{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:4px;
   }
 
   .contact-label,
-  .contact-item a {
-    font-size: 16px;
+  .contact-item a{
+    font-size:16px;
   }
 
-  .contact-item a {
-    font-size:16px;
-    word-break: break-word;
-    overflow-wrap: anywhere;
+  .contact-item a{
+    word-break:break-word;
+    overflow-wrap:anywhere;
+  }
+
+  /* mobile-only visibility */
+  .mobile-only{
+    display:list-item;
   }
 }
 
-@media (max-width: 480px) {
-  .hero-text h1 {
-    font-size: 2.25rem;
+
+/*  EXTRA SMALL DEVICES  */
+@media (max-width:480px){
+
+  .hero-text h1{
+    font-size:2.25rem;
   }
 
-  .nav-links a {
-    font-size: 14px;
+  .nav-links a{
+    font-size:14px;
   }
 
-  .section-card h2 {
-    font-size: 2rem;
+  .section-card h2{
+    font-size:2rem;
   }
 
   .hero-description,
   .hero-seeking,
   .project-card p,
   .research-card p,
-  .contact-card p {
-    font-size: 0.95rem;
+  .contact-card p{
+    font-size:0.95rem;
   }
 }

@@ -358,17 +358,19 @@ Designed and developed a Unity-based VR prototype for Meta Quest that redesigns 
         </div>
       </div>
 
-      <!-- desktop arrows -->
-      <button class="slider-btn prev" type="button" onclick="prevSlide()">‹</button>
-      <button class="pause-btn" type="button" onclick="toggleSliderPause(this)">Pause</button>
-      <button class="slider-btn next" type="button" onclick="nextSlide()">›</button>
+     <!-- desktop arrows -->
+<button class="slider-btn prev" type="button" onclick="prevSlide()">‹</button>
+<button class="slider-btn next" type="button" onclick="nextSlide()">›</button>
 
-      <!-- mobile controls -->
-      <div class="mobile-controls">
-        <button class="mobile-arrow" type="button" onclick="prevSlide()">‹</button>
-        <button class="pause-btn" type="button" onclick="toggleSliderPause(this)">Pause</button>
-        <button class="mobile-arrow" type="button" onclick="nextSlide()">›</button>
-      </div>
+<!-- desktop pause -->
+<button class="pause-btn desktop-pause" type="button" onclick="toggleSliderPause(this)">Pause</button>
+
+<!-- mobile controls -->
+<div class="mobile-controls">
+  <button class="mobile-arrow" type="button" onclick="prevSlide()">‹</button>
+  <button class="pause-btn mobile-pause" type="button" onclick="toggleSliderPause(this)">Pause</button>
+  <button class="mobile-arrow" type="button" onclick="nextSlide()">›</button>
+</div>
 
       <div class="slider-dots">
         <span class="dot active"></span>
