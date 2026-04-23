@@ -1633,6 +1633,17 @@ body.modal-open {
   .mobile-only{
     display:list-item;
   }
+
+  .github-menu {
+    left: auto;
+    right: -40px;              
+
+    top: 100%;            
+    transform: translateY(6px);
+
+    min-width: 200px;
+    max-width: 80vw;      
+  }
 }
 
 
