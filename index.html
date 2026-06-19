@@ -607,14 +607,19 @@ C++ calculator containerized with Docker for reliable and consistent execution a
 
   
   <span class="video-wrapper">
+
     <button
-      type="button"
-      class="video-icon-btn"
-      title="View Exploratory QA testing videos"
-      aria-label="View Exploratory QA testing videos"
-      onclick="toggleVideoMenu(event)">
-      🎥
-    </button>
+  type="button"
+  class="video-icon-btn"
+  title="View Exploratory QA testing videos"
+  aria-label="View Exploratory QA testing videos"
+  onclick="toggleVideoMenu(event)">
+
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M8 5v14l11-7z"></path>
+  </svg>
+
+</button>
 
     <span id="videoMenu" class="github-menu video-menu">
       <a href="https://drive.google.com/file/d/1ozTy5D0nJG8SEjt1QNvdC_6uzE1ourWg/view?usp=sharing" target="_blank">Homepage Testing Video</a>
@@ -699,16 +704,22 @@ C++ calculator containerized with Docker for reliable and consistent execution a
     sessionStorage.setItem("qaGithubMenuOpen", "false");
   }
 
-  function toggleMenu(event) {
-    event.stopPropagation();
+function toggleMenu(event) {
+  event.stopPropagation();
 
-    const isOpen = githubMenu.style.display === "block";
-    if (isOpen) {
-      closeMenu();
-    } else {
-      openMenu();
+  const isOpen = githubMenu.style.display === "block";
+
+  if (isOpen) {
+    closeMenu();
+  } else {
+    if (typeof closeVideoMenu === "function") {
+      closeVideoMenu();
     }
+
+    openMenu();
   }
+}
+
 
   document.addEventListener("click", function () {
     closeMenu();
@@ -742,24 +753,19 @@ C++ calculator containerized with Docker for reliable and consistent execution a
     videoMenu.style.display = "none";
   }
 
-  function toggleVideoMenu(event) {
-    event.stopPropagation();
+function toggleVideoMenu(event) {
+  event.stopPropagation();
 
-    const isOpen = videoMenu.style.display === "block";
+  const isOpen = videoMenu.style.display === "block";
 
-    if (isOpen) {
-      closeVideoMenu();
-    } else {
-      closeVideoMenu();
-
-      if (typeof closeMenu === "function") {
-        closeMenu();
-      }
-
-      openVideoMenu();
-    }
+  if (isOpen) {
+    closeVideoMenu();
+  } else {
+    closeMenu();
+    openVideoMenu();
   }
-
+}
+ 
   document.addEventListener("click", function () {
     closeVideoMenu();
   });

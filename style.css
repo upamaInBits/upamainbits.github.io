@@ -145,22 +145,39 @@ body.modal-open {
   position: relative;
   display: inline-flex;
   align-items: center;
+  vertical-align: middle;
   margin-left: 8px;
 }
 
 .github-icon-btn,
 .video-icon-btn {
-  background: none;
+  background: transparent;
   border: none;
+  outline: none;
+  box-shadow: none;
   padding: 0;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  color: #555;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
-.video-icon-btn {
-  font-size: 18px;
-  line-height: 1;
+.github-icon-btn svg,
+.video-icon-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  display: block;
+}
+
+.github-icon-btn:hover,
+.video-icon-btn:hover {
+  color: #222;
 }
 
 .github-menu {
@@ -186,9 +203,7 @@ body.modal-open {
   font-weight: 400;
 }
 
-.github-menu a:hover {
-  background: #f3f3f3;
-}
+
 
 
 .research-card {
