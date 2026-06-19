@@ -140,14 +140,21 @@ body.modal-open {
   align-items: center;
 }
 
-
-.github-wrapper,
-.video-wrapper {
+.github-wrapper {
   position: relative;
   display: inline-flex;
   align-items: center;
   vertical-align: middle;
   margin-left: 8px;
+  line-height: 1;
+}
+
+.video-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  margin-left: 0px;
   line-height: 1;
 }
 
@@ -158,24 +165,37 @@ body.modal-open {
   outline: none;
   box-shadow: none;
   padding: 0;
-  width: 22px;
-  height: 22px;
+  margin: 0;
   cursor: pointer;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
   color: #000;
   appearance: none;
   -webkit-appearance: none;
 }
 
-.github-icon-btn svg,
-.video-icon-btn svg {
-  width: 22px;
-  height: 22px;
+.github-icon-btn svg {
+  width: 24px;
+  height: 24px;
   fill: currentColor;
   display: block;
-  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.video-icon-btn {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  margin-left: 0;
+}
+
+.video-icon-btn svg {
+  width: 30px;
+  height: 30px;
+  fill: currentColor;
+  display: block;
 }
 
 .github-icon-btn:hover,
@@ -188,39 +208,59 @@ body.modal-open {
   transform: scale(1.08);
 }
 
+/* dropdown card */
 .github-menu {
   display: none;
   position: absolute;
-  top: 28px;
-  left: 0;
-  background: white;
-  min-width: 210px;
-  padding: 8px 0;
-  border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+
+  min-width: 250px;
+  background: #ffffff;
+
+  border: 1px solid #d8d8d8;
+  border-radius: 14px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+
+  padding: 14px 0;
   z-index: 999999;
-  font-family: Inter, sans-serif;
+  overflow: hidden;
 }
 
-.github-menu a {
+/* this opens the dropdown */
+.github-menu.show {
   display: block;
-  padding: 8px 12px;
-  color: #333;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 400;
-  white-space: nowrap;
 }
 
-.github-menu a:hover {
-  background: #f3f3f3;
-  color: #000;
-}
-
+/* wider dropdown for video links */
 .video-menu {
   min-width: 250px;
 }
 
+/* dropdown options */
+.github-menu a {
+  display: block;
+  width: 100%;
+  padding: 12px 24px;
+
+  color: #222;
+  text-decoration: none;
+   font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.35;
+
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+/* hover color change */
+.github-menu a:hover {
+  background: #f3f0ec;
+  color: #000;
+}
 
 .research-card {
   padding: 40px 50px;
@@ -233,7 +273,6 @@ body.modal-open {
   color: #333;
 }
 
-/* Each section spacing */
 .research-block {
   margin-bottom: 28px;
 }
@@ -1682,16 +1721,19 @@ body.modal-open {
     display:list-item;
   }
 
-  .github-menu {
-    left: auto;
-    right: -40px;              
+.github-menu {
+  left: auto;
+  right: -20px;
+  top: calc(100% + 10px);
+  transform: none;
 
-    top: 100%;            
-    transform: translateY(6px);
+  min-width: 230px;
+  max-width: 82vw;
+}
 
-    min-width: 200px;
-    max-width: 80vw;      
-  }
+.video-menu {
+  min-width: 250px;
+}
 
   .coursework-card {
   background: #f7f7f7;

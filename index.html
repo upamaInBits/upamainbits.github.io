@@ -599,10 +599,10 @@ C++ calculator containerized with Docker for reliable and consistent execution a
       </svg>
     </button>
 
-    <span id="githubMenu" class="github-menu">
-      <a href="https://github.com/upamaInBits/qa-case-studies" target="_blank">QA Case Studies</a>
-      <a href="https://github.com/upamaInBits/portfolio-testing-" target="_blank">Portfolio Testing</a>
-    </span>
+<span id="githubMenu" class="github-menu dropdown-card">
+  <a href="https://github.com/upamaInBits/qa-case-studies" target="_blank">QA Case Studies</a>
+  <a href="https://github.com/upamaInBits/portfolio-testing-" target="_blank">Portfolio Testing</a>
+</span>
   </span>
 
   
@@ -621,12 +621,14 @@ C++ calculator containerized with Docker for reliable and consistent execution a
 
 </button>
 
-    <span id="videoMenu" class="github-menu video-menu">
-      <a href="https://drive.google.com/file/d/1ozTy5D0nJG8SEjt1QNvdC_6uzE1ourWg/view?usp=sharing">Homepage Testing Video</a>
-      <a href="https://drive.google.com/file/d/1yHVZ1X4xWvJJmU8YnGlmuKhahza7tcqy/view?usp=sharing">About Us Page Testing Video</a>
-      <a href="https://drive.google.com/file/d/1cKyvuPlgNon4nCePkPRebdt5vn9CD-hF/view">Sign-up Form Testing Video</a>
-      <a href="https://drive.google.com/file/d/1CCjoy5QriICdL-gmcxNrNxPgw9JWoi2G/view">Checkout Flow Testing Video</a>
-    </span>
+ <span id="videoMenu" class="github-menu dropdown-card video-menu">
+  <a href="https://drive.google.com/file/d/1ozTy5D0nJG8SEjt1QNvdC_6uzE1ourWg/view?usp=sharing" target="_blank">Homepage Testing Video</a>
+  <a href="https://drive.google.com/file/d/1yHVZ1X4xWvJJmU8YnGlmuKhahza7tcqy/view?usp=sharing" target="_blank">About Us Page Testing Video</a>
+  <a href="https://drive.google.com/file/d/1cKyvuPlgNon4nCePkPRebdt5vn9CD-hF/view" target="_blank">Sign-up Form Testing Video</a>
+  <a href="https://drive.google.com/file/d/1CCjoy5QriICdL-gmcxNrNxPgw9JWoi2G/view" target="_blank">Checkout Flow Testing Video</a>
+</span>
+
+
   </span>
 </h2>
 <p class="tech-stackk">
@@ -693,87 +695,50 @@ C++ calculator containerized with Docker for reliable and consistent execution a
 
 <script>
   const githubMenu = document.getElementById("githubMenu");
+  const videoMenu = document.getElementById("videoMenu");
 
-  function openMenu() {
-    githubMenu.style.display = "block";
-    sessionStorage.setItem("qaGithubMenuOpen", "true");
+  function closeAllMenus() {
+    githubMenu.classList.remove("show");
+    videoMenu.classList.remove("show");
   }
 
-  function closeMenu() {
-    githubMenu.style.display = "none";
-    sessionStorage.setItem("qaGithubMenuOpen", "false");
-  }
+  function toggleMenu(event) {
+    event.stopPropagation();
 
-function toggleMenu(event) {
-  event.stopPropagation();
+    const isOpen = githubMenu.classList.contains("show");
 
-  const isOpen = githubMenu.style.display === "block";
+    closeAllMenus();
 
-  if (isOpen) {
-    closeMenu();
-  } else {
-    if (typeof closeVideoMenu === "function") {
-      closeVideoMenu();
+    if (!isOpen) {
+      githubMenu.classList.add("show");
     }
-
-    openMenu();
   }
-}
 
+  function toggleVideoMenu(event) {
+    event.stopPropagation();
 
-  document.addEventListener("click", function () {
-    closeMenu();
-  });
+    const isOpen = videoMenu.classList.contains("show");
+
+    closeAllMenus();
+
+    if (!isOpen) {
+      videoMenu.classList.add("show");
+    }
+  }
 
   githubMenu.addEventListener("click", function (event) {
     event.stopPropagation();
   });
 
-  window.addEventListener("load", function () {
-    if (sessionStorage.getItem("qaGithubMenuOpen") === "true") {
-      openMenu();
-    }
-  });
-
-  window.addEventListener("pageshow", function () {
-    if (sessionStorage.getItem("qaGithubMenuOpen") === "true") {
-      openMenu();
-    }
-  });
-</script>
-
-<script>
-  const videoMenu = document.getElementById("videoMenu");
-
-  function openVideoMenu() {
-    videoMenu.style.display = "block";
-  }
-
-  function closeVideoMenu() {
-    videoMenu.style.display = "none";
-  }
-
-function toggleVideoMenu(event) {
-  event.stopPropagation();
-
-  const isOpen = videoMenu.style.display === "block";
-
-  if (isOpen) {
-    closeVideoMenu();
-  } else {
-    closeMenu();
-    openVideoMenu();
-  }
-}
- 
-  document.addEventListener("click", function () {
-    closeVideoMenu();
-  });
-
   videoMenu.addEventListener("click", function (event) {
     event.stopPropagation();
   });
+
+  document.addEventListener("click", function () {
+    closeAllMenus();
+  });
 </script>
+
 
   <!--catchafire-->
 <div id="catchafireModal" class="modal-overlay">
