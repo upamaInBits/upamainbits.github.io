@@ -731,6 +731,44 @@ C++ calculator containerized with Docker for reliable and consistent execution a
   });
 </script>
 
+<script>
+  const videoMenu = document.getElementById("videoMenu");
+
+  function openVideoMenu() {
+    videoMenu.style.display = "block";
+  }
+
+  function closeVideoMenu() {
+    videoMenu.style.display = "none";
+  }
+
+  function toggleVideoMenu(event) {
+    event.stopPropagation();
+
+    const isOpen = videoMenu.style.display === "block";
+
+    if (isOpen) {
+      closeVideoMenu();
+    } else {
+      closeVideoMenu();
+
+      if (typeof closeMenu === "function") {
+        closeMenu();
+      }
+
+      openVideoMenu();
+    }
+  }
+
+  document.addEventListener("click", function () {
+    closeVideoMenu();
+  });
+
+  videoMenu.addEventListener("click", function (event) {
+    event.stopPropagation();
+  });
+</script>
+
   <!--catchafire-->
 <div id="catchafireModal" class="modal-overlay">
   <div class="modal-card catchafire-modal-card">
