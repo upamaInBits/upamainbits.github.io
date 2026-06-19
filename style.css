@@ -140,6 +140,7 @@ body.modal-open {
   align-items: center;
 }
 
+
 .github-wrapper,
 .video-wrapper {
   position: relative;
@@ -147,6 +148,7 @@ body.modal-open {
   align-items: center;
   vertical-align: middle;
   margin-left: 8px;
+  line-height: 1;
 }
 
 .github-icon-btn,
@@ -156,28 +158,34 @@ body.modal-open {
   outline: none;
   box-shadow: none;
   padding: 0;
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #555;
+  color: #000;
   appearance: none;
   -webkit-appearance: none;
 }
 
 .github-icon-btn svg,
 .video-icon-btn svg {
-  width: 18px;
-  height: 18px;
+  width: 22px;
+  height: 22px;
   fill: currentColor;
   display: block;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .github-icon-btn:hover,
 .video-icon-btn:hover {
-  color: #222;
+  color: #555;
+}
+
+.github-icon-btn:hover svg,
+.video-icon-btn:hover svg {
+  transform: scale(1.08);
 }
 
 .github-menu {
@@ -186,7 +194,7 @@ body.modal-open {
   top: 28px;
   left: 0;
   background: white;
-  min-width: 190px;
+  min-width: 210px;
   padding: 8px 0;
   border-radius: 8px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.18);
@@ -201,9 +209,17 @@ body.modal-open {
   text-decoration: none;
   font-size: 14px;
   font-weight: 400;
+  white-space: nowrap;
 }
 
+.github-menu a:hover {
+  background: #f3f3f3;
+  color: #000;
+}
 
+.video-menu {
+  min-width: 250px;
+}
 
 
 .research-card {
